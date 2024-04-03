@@ -2,8 +2,8 @@
 #include <ESP8266HTTPClient.h>
 #include <WiFiClientSecure.h>
 
-const char* SSID = "NOLA 37G";
-const char* PASS = "12345678";
+const char* SSID = "Ruang Guru Lantai 3";
+const char* PASS = "NorthernLight2020";
 
 String url = "https://habito-api.vercel.app";
 
@@ -14,7 +14,6 @@ void setup() {
 
 void loop() {
   getData();
-  delay(5000);
 
 }
 
@@ -39,7 +38,7 @@ void getData(){
   client.setInsecure();
 
   HTTPClient http;
-  String fullUrl = url + "data?uid=1212";
+  String fullUrl = "https://habito-api.vercel.app/data?uid=121212";
   Serial.println(fullUrl);     
   http.begin(client,fullUrl);
  
