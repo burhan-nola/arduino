@@ -85,16 +85,17 @@ void readRFID(void)
         Serial.println(success);
     
         // Kirim data ke API
+        getData(cardUID);
         delay(500); // Delay sebelum membaca kartu berikutnya
       }
 }
 
-void getData(){
+void getData(String uid){
   WiFiClientSecure client;
   client.setInsecure();
 
   HTTPClient http;
-  String fullUrl = "https://habito-api.vercel.app/data?uid=121212";
+  String fullUrl = "https://habito-api.vercel.app/data?uid="+uid;
   Serial.println(fullUrl);     
   http.begin(client,fullUrl);
  
